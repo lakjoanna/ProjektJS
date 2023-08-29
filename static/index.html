@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- scripts -->
+    <script>
+        // Weryfikacja czy użytkownik jest zalogowany
+        const sessionDataJson = localStorage.getItem("sessionData")
+        if(sessionDataJson)
+        {
+            const sessionData = JSON.parse(sessionDataJson)
+            if(sessionData.sessionId)
+            {
+                window.location = "/userMain.html"
+            }
+        }
+    </script>
+
+    <script src="/js/index.js"></script>
+
+    <title>Login</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/register.html">Rejestracja</a>
+            </li>
+        </ul>
+    </nav>
+    <h1>Strona główna</h1>
+    <!-- Strona główna
+        zawierająca formularz logowania 
+        Czyli formularz <form> zawierający 2 inputy -> login i hasło oraz guzik zaloguj
+    -->
+    <form id="loginForm">
+        <div>
+            <label>Login</label>
+            <input type="text" id="inputLogin"/>
+        </div>
+        <div>
+            <label>Hasło</label>
+            <input type="password" id="inputPassword"/>
+        </div>
+        <button>Zaloguj</button>
+        <div id="divLoginErrors" style="color: red;">
+
+        </div>
+    </form>
+</body>
+</html>

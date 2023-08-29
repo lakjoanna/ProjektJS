@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- scripts -->
+    <script src="/js/register.js"></script>
+
+    <title>Register</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/index.html">Logowanie</a>
+            </li>
+        </ul>
+    </nav>
+    <h1>Rejestracja</h1>
+    <form id="addUserForm">
+        <div>
+            <label>Imię</label>
+            <input type="text" id="inputName"/>
+        </div>
+        <div>
+            <label>Nazwisko</label>
+            <input type="text" id="inputSurname"/>
+        </div>
+        <div>
+            <label>Login</label>
+            <input type="text" id="inputLogin"/>
+        </div>
+        <div>
+            <label>Hasło</label>
+            <input type="password" id="inputPassword"/>
+        </div>
+        <div>
+            <label>Powtórz hasło</label>
+            <input type="password" id="inputPassword2"/>
+        </div>
+        <button>Utwórz konto</button>
+        <div id="divRegisterErrors" style="color: red;">
+
+        </div>
+        <div id="divRegisterInfo" style="color: green;">
+
+        </div>
+    </form>
+    
+</body>
+</html>

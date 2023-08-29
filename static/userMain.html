@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- scripts -->
+    <script>
+        // Weryfikacja czy użytkownik jest zalogowany
+        const sessionDataJson = localStorage.getItem("sessionData")
+        if(sessionDataJson)
+        {
+            const sessionData = JSON.parse(sessionDataJson)
+            if(!sessionData.sessionId)
+            {
+                window.location = "/index.html"
+            }
+        }
+        else
+        {
+            window.location = "/index.html"
+        }
+    </script>
+
+    <script src="/js/userMain.js"></script>
+
+    <title>Panel użytkownika</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/userOrders.html">Zamówienia</a>
+            </li>
+        </ul>
+
+        <button id="btnLogout">Wyloguj</button>
+    </nav>
+    <h1>Panel użytkownika: <span id="spanName"></span></h1>
+</body>
+</html>
