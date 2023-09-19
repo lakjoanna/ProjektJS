@@ -21,6 +21,7 @@
             window.location = "/index.html"
         }
     </script>
+    <script src="/js/userOrders.js" ></script>
 
     <title>Zamówienia</title>
 </head>
@@ -44,5 +45,14 @@
         <button id="btnLogout">Wyloguj</button>
     </nav>
     <h1>Zamówienia</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Numer zamówienia</th>
+                    <th>Użytkownik</th>
+                </tr>
+            </thead>
+            <tbody id="tBodyZamowienia"></tbody>
+        </table>
 </body>
 </html>

@@ -10,7 +10,7 @@ module.exports.getAllOrderController = async (req, res) => {
 }
 
 module.exports.postOrderController = async (req, res) => {
-    const number = req.body.number
+    const number = getOrderNumber()
     const userId = req.body.userId
     const adressId = req.body.adressId
     const orderPositionModels = req.body.orderPositions
@@ -37,4 +37,9 @@ module.exports.deleteOrderController = async (req, res) => {
      const id = req.params.id
      await Order.destroy({ where: {id:id} })
      res.sendStatus(200)
+}
+
+function getOrderNumber()
+{
+    return "ZAM/" + Date.now() + "/" + new Date().getFullYear()
 }

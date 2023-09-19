@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function addToCart(commodity)
 {
     let shoppingCart = []
-    let shoppingCartJson = localStorage.getItem("shoppingCart")
+    const shoppingCartJson = localStorage.getItem("shoppingCart")
     if(shoppingCartJson)
     {
         shoppingCart = JSON.parse(shoppingCartJson)

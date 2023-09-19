@@ -3,6 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- scripts -->
+     <script>
+        // Weryfikacja czy użytkownik jest zalogowany
+        const sessionDataJson = localStorage.getItem("sessionData")
+        if(sessionDataJson)
+        {
+            const sessionData = JSON.parse(sessionDataJson)
+            if(!sessionData.sessionId)
+            {
+                window.location = "/index.html"
+            }
+        }
+        else
+        {
+            window.location = "/index.html"
+        }
+    </script>
+
+    <script src="/js/shoppingCart.js"></script>
+
     <title>Document</title>
 </head>
 <body>
@@ -25,5 +46,22 @@
         <button id="btnLogout">Wyloguj</button>
     </nav>
     <h1>Koszyk</h1>
+
+    <!-- Dodajemy bazową tabelę  -->
+   <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nazwa</th>
+                <th>marka</th>
+                <th>cena</th>
+                <th>ilość</th>
+                <th>wartość</th>
+            </tr>
+        </thead>
+        <tbody id="tBodyshoppingCart"></tbody>
+   </table>
+   <button id="btnZamow">Zamów</button>
+
 </body>
 </html>

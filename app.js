@@ -1,7 +1,9 @@
 const express = require ("express")
 const database = require("./database")
+const cors = require("cors")
 
 const app = express()
+app.use(cors())
 app.use(express.json())
 app.use(express.static("static"))
 
