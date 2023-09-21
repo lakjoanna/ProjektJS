@@ -1,10 +1,14 @@
 const Order = require("../models/Order")
 const OrderPosition = require("../models/OrderPosition")
 const Commodity = require("../models/Commodity")
+const User = require("../models/User")
 
 module.exports.getAllOrderController = async (req, res) => {
     const orders = await Order.findAll({
-        include:[{model: OrderPosition, include: Commodity }]
+        include:[
+            { model: OrderPosition, include: Commodity },
+            { model: User }
+        ]
     })
     res.json({orders})
 }
